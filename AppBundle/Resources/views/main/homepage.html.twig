@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Archives d'Aerelloth - Sommaire{% endblock %}
+
+{% block body %}
+<div class="livre">
+<div class="pagegauche">
+</div>
+<div class="pagedroite">
+	<nav class="Aerelloth">
+		<h1>Les Archives d'Aerelloth</h1>
+		<h2>I estel dartha ui...</h2>
+		<ul>
+			<li><span><a href="#">Sommaire &gt;</a></span>
+				<ul>
+					<!--<li><a href="preface.html">Préface</a></li>
+					<li><a href="dernieres-lignes.html">Dernières lignes</a></li>
+					<li><span><a href="chroniques.html">Chroniques ›</a></span>
+						<ul>
+							<li><a href="chroniques/les-archives-d-aerelloth.html">Les Archives d'Aerelloth</a></li>
+							<li><a href="chroniques/les-presentations.html">Les présentations</a></li>
+						</ul>
+					</li>-->
+					<li><span>Histoires ›</span>
+							<ul>
+								{% for story in stories %}
+								<li><a href="{{path('show_story', {'id':story.id})}}">{{ story.title }}</a></li>
+								{% endfor %}
+							</ul>
+						</li>
+					<!--<li><span><a href="annexes.html">Annexes ›</a></span>
+						<ul>
+							<li><a href="annexes/galerie-de-portraits.html">Galerie de portraits</a></li>
+							<li><a href="annexes/enigme-du-festival-du-printemps.html">Enigme du festival du printemps</a></li>
+							<li><a href="annexes/solution-de-l-enigme.html">Solution de l'énigme</a></li>
+							<li><a href="annexes/message-aux-voyageurs.html">Message aux Voyageurs</a></li>
+							<li><a href="annexes/article-mysterieux.html">Article mystérieux</a></li>
+						</ul>
+					</li>-->
+					<li><span><a href="{{path('admin')}}">L'encrier</a></span></li>
+					<!--<li><a href="contact.html">Me contacter</a></li>-->
+				</ul>
+			</li>
+		</ul>
+	</nav>
+</div>
+{% endblock %}
+
+{% block stylesheets %}
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Calligraffitti" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Euphoria+Script" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps" rel="stylesheet"> 
+<link rel="stylesheet" href="{{ asset('CSS/style-homepage.css') }}">
+{% endblock %}

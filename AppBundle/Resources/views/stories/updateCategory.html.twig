@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mettre à jour une catégorie{% endblock %}
+
+{% block body %}
+
+<div class="container">
+	<div class="content">
+		<h1>Modifier une catégorie</h1>
+		{{form(formulaire)}}
+		<div class='margin-top'>
+			<a href="{{path('show_categories')}}">Retour aux catégories</a>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('CSS/style-admin.css') }}">
+{% endblock %}

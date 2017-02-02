@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des catégories{% endblock %}
+
+{% block body %}
+
+<div class="container">
+	<div class="content">
+
+		<h1>Liste des catégories :</h1>
+		<a href="{{path('add_category')}}">Ajouter une catégorie</a>
+		<ul>
+			{% for category in categories %}
+			<li><a href="{{path('show_category', {'id':category.id})}}">{{ category.name }}</a> - <a href="{{path('update_category', {'id':category.id})}}">Modifier</a> - <a href="{{path('remove_category', {'id':category.id})}}">Supprimer</a></li>
+			{% endfor %}
+		</ul>
+		<a href="{{path('show_stories')}}">Liste des histoires</a>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('CSS/style-admin.css') }}">
+{% endblock %}

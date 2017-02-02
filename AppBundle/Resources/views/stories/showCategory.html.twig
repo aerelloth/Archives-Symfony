@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catégorie{% endblock %}
+
+{% block body %}
+
+<div class="container">
+	<div class="content">
+		<h1>Articles de la catégorie {{category.name}}</h1>
+		<ul>
+			{% for story in category.stories %}
+			<li><a href="{{path('show_story', {'id':story.id})}}">{{ story.title }}</a> - <a href="{{path('update_story', {'id':story.id})}}">Modifier</a> - <a href="{{path('remove_story', {'id':story.id})}}">Supprimer</a></li>
+			{% endfor %}
+		</ul>
+			{% if category.stories is empty %}
+			<p>Il n'y a pas encore d'histoires dans cette catégorie.</p>
+		</ul>
+			<a href="{{path('add_story')}}">Ajouter une histoire</a>
+			{% endif %}
+		
+		<a href="{{path('show_categories')}}">Toutes les catégories</a>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('CSS/style-admin.css') }}">
+{% endblock %}

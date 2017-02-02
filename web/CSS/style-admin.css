@@ -1,0 +1,118 @@
+body {
+	background-color: #AB917A;
+	text-align: center;
+	background-image: url("../img/fzm-canvas-texture.jpg");
+	
+}
+.container {
+	background-color: rgba(255, 255, 255, 0.6);
+	width: 75%;
+	height: auto;
+	margin: 100px auto;
+	text-align: center;
+	padding: 20px;
+	background-image: url("../img/responsive.png");
+	background-color: rgba(255, 255, 255, 0);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 80% auto;
+	height: 110vw;
+	width: 100%;
+}
+
+.content {
+	width: 60%;
+	margin: 70px auto;
+	height: 90vw;
+	overflow: auto;
+}
+
+a, button {
+	text-decoration: none;
+	color: #AB917A;
+	padding: 2px 5px;
+	line-height: 1.8;
+	border-radius: 15px;
+	transition: 0.1s all;
+}
+
+button {
+	background-color: rgba(255,255,255, 0.4);
+	border: 1px solid #AB917A;
+	cursor: pointer;
+	padding: 2px;
+}
+ul {
+	text-align: left;
+}
+
+li a:first-child {
+	color: black;
+}
+
+h1 {
+	font-size: 1.5em;
+	border: 1px solid #AB917A;
+	padding: 5px;
+}
+
+h2 {
+	font-size: 1.2em;
+	color: #6D4F36;
+/*	margin-top: 20px;*/
+}
+a:hover, button:hover {
+	background-color: #AB917A;
+	color: white;
+}
+.margin-top {
+	margin-top: 20px;
+}
+input {
+	margin: 30px 0; 
+}
+textarea {
+    display: block;
+    margin: 10px auto 20px auto;
+    width: 75%;
+    height: 500px;
+}
+select {
+	margin-bottom: 20px;
+}
+
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width:400px){
+
+  
+  a {
+  	font-size: 0.8em;
+  }
+
+  h1 {
+  	width: 80%;
+  	margin: 0 auto;
+  }
+}
+
+@media screen and (max-width:360px){
+  h1 {
+    font-size: 1em;
+  }
+
+  .content {
+	width: 60%;
+	margin: 70px auto;
+	height: 80vw;
+}
+
+}
+
+@media screen and (max-width:300px){
+  h1 {
+    font-size: 1em;
+  }
+}

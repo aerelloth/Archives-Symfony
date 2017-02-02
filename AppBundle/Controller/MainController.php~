@@ -1,0 +1,69 @@
+<?php
+
+namespace AppBundle\Controller;
+
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Entity\Category;
+use AppBundle\Entity\Story;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\HttpFoundation\Session\Session; 
+
+class MainController extends Controller
+{
+    /**
+     * @Route("/", name="homepage")
+     */
+    public function homepageAction()
+    {
+        $stories = $this->getDoctrine()->getRepository('AppBundle:Story')->findAll();
+        return $this->render('AppBundle:main:homepage.html.twig', ['stories' => $stories]);
+    }
+
+
+    /**
+     * @Route("/admin", name="admin")
+     */
+    public function adminAction()
+    {
+        return $this->render('AppBundle:main:admin.html.twig', ['user' => $this->get('session')->get('user')]);
+    }
+
+    /**
+     * @Route("/login", name="login")
+     */
+    public function loginAction()
+    {
+        if (isset($_POST) && isset($_POST['password']))
+        {
+            $PASSWORD = "aerelloth-c'est-moi";
+            $password = $_POST['password'];   
+             
+             if($password == $PASSWORD)
+             {
+                 $this->get('session')->set('user', 'admin');
+             }
+             else
+             {
+                 $this->get('session')->set('user', null);
+             }
+        }
+        return $this->redirectToRoute('admin');
+    }
+
+ 
+    /**
+     * @Route("/logout", name="logout")
+     */
+    public function logoutAction()
+    {
+        $this->get('session')->set('user', null);
+        return $this->redirectToRoute('admin');
+    }
+
+    // préface, dernières lignes, contact
+
+}

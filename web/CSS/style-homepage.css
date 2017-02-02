@@ -1,0 +1,237 @@
+textarea#form_text.textarea {
+    background-color: red;
+    color: blue;
+}
+
+nav h1 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 0px;
+}
+
+nav h2 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: normal;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+span {
+  font-weight: 600;
+}
+
+.pagegauche {
+    width: 370px;
+    height: 530px;
+    overflow: auto;
+    overflow-x: hidden;
+    margin: 40px 0 0 60px;
+}
+
+ .pagedroite .Aerelloth h1 {
+   font-size: 25px;
+   text-align: center;
+ }
+
+body {
+  background-image: url("../img/fzm-canvas-texture.jpg");
+  margin: auto;
+}
+
+.livre {
+  background-image: url("../img/main-page.png");
+  background-repeat: no-repeat;
+  height: 630px;
+  width: 930px;
+  margin: 10% auto;
+  display: flex;
+}
+
+
+
+/* sommaire déroulant */
+nav ul ul {
+  display:none;
+}
+
+nav li:hover > ul {
+  display:block;
+}
+
+/* fin du sommaire */
+
+/*page de droite*/
+
+.pagedroite {
+    width: 370px;
+    height: 530px;
+    overflow: auto;
+    overflow-x: hidden;
+    margin: 40px 0 0 60px;
+}
+
+.pagedroite li {
+  list-style-type: none;
+  text-indent: -20px; 
+  margin-bottom:5px;
+}
+
+.pagedroite a {
+  text-decoration: none;
+  color:black;
+}
+
+p {
+  text-indent: 20px;
+  margin-bottom: 0;
+  text-align: justify;
+  margin-left: 10px;
+  margin-right: 15px;
+}
+
+/*Différents styles*/ 
+
+.Aerelloth {
+  font-family: 'Calligraffitti', cursive;
+  font-size: 14px;
+  }
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width:930px){
+  .livre {
+    background-image: url("../img/responsive.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 80% auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 110vw;
+    width: 100%;
+  }
+
+  .pagegauche {
+    display: block;
+    height: auto;
+    margin-top: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 60%;
+    margin-left: 0;
+  }
+
+  .pagedroite {
+    height: 800px;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 60%;
+  }
+}
+
+@media screen and (max-width:850px){
+  .pagedroite, .pagedroite > div {
+    height: 800px;
+  }
+}
+
+@media screen and (max-width:800px){
+  .pagedroite, .pagedroite > div {
+    height: 700px;
+  }
+  .pagedroite h1 {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (max-width:750px){
+  .pagedroite, .pagedroite > div {
+    height: 650px;
+  }
+}
+
+@media screen and (max-width:700px){
+  .pagedroite, .pagedroite > div {
+    height: 650px;
+  }
+  .pagegauche {
+    margin-top: 80px;
+  }
+}
+
+@media screen and (max-width:650px){
+  .pagedroite, .pagedroite > div {
+    height: 600px;
+  }
+}
+
+@media screen and (max-width:600px){
+  .pagedroite, .pagedroite > div {
+    height: 550px;
+  }
+  .pagegauche {
+    margin-top: 60px;
+  }
+}
+
+@media screen and (max-width:550px){
+  .pagedroite, .pagedroite > div {
+    height: 500px;
+  }
+}
+
+@media screen and (max-width:500px){
+    .livre {
+    background-size: 100% auto;
+    height: 140vw;
+    margin-top: 0;
+  }
+
+  .pagegauche, .pagedroite {
+    width: 80%;
+  }
+
+  .pagedroite, .pagedroite > div {
+    height: 550px;
+  }
+}
+
+@media screen and (max-width:400px){
+  .pagegauche {
+    margin-top: 40px;
+  }
+  .pagedroite, .pagedroite > div {
+    height: 450px;
+  }
+
+  nav h2 {
+    margin-top: 0px;
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+
+  .pagedroite ul ul {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width:300px){
+  .pagedroite, .pagedroite > div {
+    height: 450px;
+  }
+
+  .pagedroite .Aerelloth h1 {
+    font-size: 18px;
+  }
+
+  .pagedroite .Aerelloth h2 {
+    font-size: 14px;
+  }
+  .pagedroite ul ul li {
+    line-height: 1.2;
+  }
+}
