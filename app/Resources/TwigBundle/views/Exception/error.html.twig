@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Erreur : {{ status_text }}{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="content">
+        <h1>Oups ! Une erreur s'est produite pendant le chargement de la page.</h1>
+        
+        <h2>Notre application a retourné une erreur {{ status_code }} : {{ status_text }}.</h2>
+
+        <p>
+            N'hésitez pas à contacter <a href="mailto:aerelloth@gmail.com">Aerelloth</a> pour lui signaler l'erreur.
+        </p>
+        <a href="{{path('homepage')}}" id="link">Sommaire</a>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('CSS/style-admin.css') }}">
+<style>
+    h2 {
+        margin-top: 50px;
+    }
+    p {
+        margin-bottom: 50px;
+    }
+</style>
+{% endblock %}

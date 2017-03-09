@@ -1,0 +1,45 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/security.html
+security:
+
+    # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    providers:
+        in_memory:
+            memory: 
+                users:
+                    admin:
+                        password: $2y$12$y9c.ajFQ3f6nFJFxK/WX8e2HoR0ZhAHneQAFlw8rWyjCWMLR8EbRu
+                        roles: 'ROLE_ADMIN'
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            anonymous: ~
+            http_basic: ~
+            # activate different ways to authenticate
+
+            # http_basic: ~
+            # http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+
+            # form_login: ~
+            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+
+    access_control:
+            # require ROLE_ADMIN for /admin*
+            - { path: /admin, roles: ROLE_ADMIN }
+            - { path: /add_category, roles: ROLE_ADMIN }
+            - { path: ^/show_stories, roles: ROLE_ADMIN }
+            - { path: ^/show_categories, roles: ROLE_ADMIN }
+            - { path: ^/show_category, roles: ROLE_ADMIN }
+            - { path: /update, roles: ROLE_ADMIN }
+            - { path: /remove, roles: ROLE_ADMIN }
+
+    encoders:
+        Symfony\Component\Security\Core\User\User:
+            algorithm: bcrypt
+            cost: 12
+

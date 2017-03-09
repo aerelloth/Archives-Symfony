@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panneau d'administration{% endblock %}
+
+{% block body %}
+
+<div class="container">
+	<div class="content">
+		<h1>Panneau d'administration</h1>
+		<div class="liens">	
+			<h2>Histoires</h2>
+			<a href="{{path('show_stories')}}">Afficher toutes les histoires</a>
+			<a href="{{path('add_story')}}">Ajouter une histoire</a>
+			<h2>Catégories</h2>
+			<a href="{{path('show_categories')}}">Afficher toutes les catégories</a>
+			<a href="{{path('add_category')}}">Ajouter une catégorie</a>
+
+			<!-- pour ajout ultérieur -->
+
+			<!--<h2>Chroniques</h2>
+			<a href="#">Afficher toutes les chroniques</a>
+			<a href="#">Ajouter une chronique</a>
+			<h2>Annexes</h2>
+			<a href="#">Afficher toutes les annexes</a>
+			<a href="#">Ajouter une annexe</a>
+			<h2>Pages</h2>
+			<a href="#">Afficher toutes les pages</a>
+			<a href="#">Ajouter une page</a>-->
+
+			<!-- ------------------- -->
+		
+		</div>	
+	</div>
+</div>
+
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('CSS/style-admin.css') }}">
+<style>
+	.liens {
+		margin: 30px auto 20px auto;
+	}
+	 .liens a {
+	 	display: block;
+	 }
+</style>
+{% endblock %}

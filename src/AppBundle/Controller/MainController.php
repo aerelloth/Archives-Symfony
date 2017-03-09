@@ -29,39 +29,8 @@ class MainController extends Controller
      */
     public function adminAction()
     {
-        return $this->render('AppBundle:main:admin.html.twig', ['user' => $this->get('session')->get('user')]);
-    }
-
-    /**
-     * @Route("/login", name="login")
-     */
-    public function loginAction()
-    {
-        if (isset($_POST) && isset($_POST['password']))
-        {
-            $PASSWORD = "aerelloth-c'est-moi";
-            $password = $_POST['password'];   
-             
-             if($password == $PASSWORD)
-             {
-                 $this->get('session')->set('user', 'admin');
-             }
-             else
-             {
-                 $this->get('session')->set('user', null);
-             }
-        }
-        return $this->redirectToRoute('admin');
-    }
-
- 
-    /**
-     * @Route("/logout", name="logout")
-     */
-    public function logoutAction()
-    {
-        $this->get('session')->set('user', null);
-        return $this->redirectToRoute('admin');
+        $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Vous n\'êtes pas autorisé à accéder à cette page !');
+        return $this->render('AppBundle:main:admin.html.twig');
     }
 
     // préface, dernières lignes, contact
